@@ -15,13 +15,13 @@ public class LineController : MonoBehaviour
 
 	void SetLine()
 	{
-		lineRenderer.SetVertexCount(Line.Points.Length);
-		lineRenderer.SetPositions(Line.Points);
+		lineRenderer.SetVertexCount(Line.points.Length);
+		lineRenderer.SetPositions(Line.points);
 
-		Vector2[] temp = new Vector2[Line.Points.Length];
-		for (int i = 0; i < Line.Points.Length; i++)
+		Vector2[] temp = new Vector2[Line.points.Length];
+		for (int i = 0; i < Line.points.Length; i++)
 		{
-			temp[i] = (Vector2) Line.Points[i];
+			temp[i] = (Vector2) Line.points[i];
 		}
 		edgeCollider.points = temp;
 	}

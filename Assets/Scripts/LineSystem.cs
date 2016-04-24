@@ -3,7 +3,9 @@ using System.Collections;
 
 public class LineSystem : MonoBehaviour 
 {
-	void Start()
+	public float distanceToPlayer = 5F;
+
+	void Update()
 	{
 		
 	}
