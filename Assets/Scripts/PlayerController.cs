@@ -23,6 +23,6 @@ public class PlayerController : MonoBehaviour
 		}
 
 		transform.position = targetPosition;
-		Player.position = transform.position;
+		Player.position = (Vector2)transform.position;
 	}
 }

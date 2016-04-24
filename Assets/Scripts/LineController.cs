@@ -10,19 +10,26 @@ public class LineController : MonoBehaviour
 	{
 		lineRenderer = this.GetComponent<LineRenderer>();
 		edgeCollider = this.GetComponent<EdgeCollider2D>();
+	}
+
+	void Update()
+	{
 		SetLine();
 	}
 
 	void SetLine()
-	{
-		lineRenderer.SetVertexCount(Line.points.Length);
-		lineRenderer.SetPositions(Line.points);
-
-		Vector2[] temp = new Vector2[Line.points.Length];
-		for (int i = 0; i < Line.points.Length; i++)
+	{	
+		if (Line.points != null)
 		{
-			temp[i] = (Vector2) Line.points[i];
+			lineRenderer.SetVertexCount(Line.points.Length);
+			lineRenderer.SetPositions(Line.points);
+
+			Vector2[] temp = new Vector2[Line.points.Length];
+			for (int i = 0; i < Line.points.Length; i++)
+			{
+				temp[i] = (Vector2) Line.points[i];
+			}
+			edgeCollider.points = temp;
 		}
-		edgeCollider.points = temp;
 	}
 }

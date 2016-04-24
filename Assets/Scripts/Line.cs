@@ -3,5 +3,5 @@
 
 public static class Line
 {
-	public static Vector3[] points = new Vector3[2];
+	public static Vector3[] points;
 }
