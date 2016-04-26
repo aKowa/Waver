@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Line.cs" />
      <Compile Include="Assets\Scripts\LineController.cs" />
      <Compile Include="Assets\Scripts\LineSystem.cs" />
