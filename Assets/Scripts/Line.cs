@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-//using System.Collections;
+using System.Collections;
 
-public static class Line
+public class Line : MonoBehaviour
 {
-	public static Vector3[] points;
+	public Vector3 p0, p1;
 }
