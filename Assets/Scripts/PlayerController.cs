@@ -16,19 +16,21 @@ public class PlayerController : MonoBehaviour
 
 	private void Update()
 	{
-		MoveUp ();
-		MoveSide ( Input.GetAxis ( "Horizontal" ) );
+		this.MoveUp ();
+		this.MoveSide ( Input.GetAxis ( "Horizontal" ) );
 
-		if (useGyro)
+		if (this.useGyro)
 		{
-			MoveSide ( -Input.gyro.rotationRate.z * gyroSensitivity );
+			this.MoveSide ( -Input.gyro.rotationRate.z * gyroSensitivity );
 		}
+
+		Player.position = (Vector2)this.transform.position;
 	}
 
 	// Lets the player move towards its local up vector
 	private void MoveUp ()
 	{
-		transform.position += (transform.up * speedUp * Time.deltaTime);
+		this.transform.position += (this.transform.up * this.speedUp * Time.deltaTime);
 	}
 
 	// Moves the player sideways in accordance to the passed horizontal value
@@ -36,7 +38,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Mathf.Abs ( h ) > 0)
 		{
-			transform.position += transform.right * speedSide * h * Time.deltaTime;
+			this.transform.position += this.transform.right * this.speedSide * h * Time.deltaTime;
 		}
 	}
 }
