@@ -3,26 +3,40 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour 
 {
+	public bool useGyro = true;
+	public float gyroSensitivity = 1f;
+
 	public float speedUp = 1F;
 	public float speedSide = 1F;
 
-	void Update()
+	private void Start ()
 	{
-		Move();
+		Input.gyro.enabled = true;
+	}
+
+	private void Update()
+	{
+		MoveUp ();
+		MoveSide ( Input.GetAxis ( "Horizontal" ) );
+
+		if (useGyro)
+		{
+			MoveSide ( -Input.gyro.rotationRate.z * gyroSensitivity );
+		}
 	}
 
 	// Lets the player move towards its local up vector
-	void Move()
+	private void MoveUp ()
 	{
-		Vector3 targetPosition = transform.position + (transform.up * speedUp * Time.deltaTime);
+		transform.position += (transform.up * speedUp * Time.deltaTime);
+	}
 
-		float h = Input.GetAxis("Horizontal");
-		if (Mathf.Abs(h) > 0)
+	// Moves the player sideways in accordance to the passed horizontal value
+	private void MoveSide(float h)
+	{
+		if (Mathf.Abs ( h ) > 0)
 		{
-			targetPosition += transform.right * speedSide * h * Time.deltaTime;
+			transform.position += transform.right * speedSide * h * Time.deltaTime;
 		}
-
-		transform.position = targetPosition;
-		Player.position = (Vector2)transform.position;
 	}
 }
