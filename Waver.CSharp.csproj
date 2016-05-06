@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BezierControlPointMode.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\BezierSpline.cs" />
+    <Compile Include="Assets\Scripts\BordeController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Line.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
