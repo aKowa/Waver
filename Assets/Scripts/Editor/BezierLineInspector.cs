@@ -2,11 +2,11 @@
 using UnityEngine;
 
 [CustomEditor ( typeof ( Line ) )]
-public class LineInspector : Editor
+public class BezierLineInspector : Editor
 {
 	private void OnSceneGUI ()
 	{
-		Line line = target as Line;
+		BezierLine line = target as BezierLine;
 		Transform handleTransform = line.transform;
 		Quaternion handleRotation = Tools.pivotRotation == PivotRotation.Local ? handleTransform.rotation : Quaternion.identity;
 		Vector3 p0 = handleTransform.TransformPoint ( line.p0 );
