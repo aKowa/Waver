@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
 	public bool useGyro = true;
 	public float gyroSensitivity = 1f;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
 		Input.gyro.enabled = true;
 	}
 
-	private void Update()
+	private void Update ()
 	{
 		this.MoveUp ();
 		this.MoveSide ( Input.GetAxis ( "Horizontal" ) );
@@ -34,11 +35,19 @@ public class PlayerController : MonoBehaviour
 	}
 
 	// Moves the player sideways in accordance to the passed horizontal value
-	private void MoveSide(float h)
+	private void MoveSide ( float h )
 	{
 		if (Mathf.Abs ( h ) > 0)
 		{
 			this.transform.position += this.transform.right * this.speedSide * h * Time.deltaTime;
+		}
+	}
+
+	public void OnTriggerEnter2D ( Collider2D collision )
+	{
+		if (collision.tag == "Border")
+		{
+			SceneManager.LoadScene ( 0 );
 		}
 	}
 }

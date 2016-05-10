@@ -4,30 +4,30 @@ using UnityEditor;
 [CustomEditor ( typeof ( BorderController ) )]
 public class BorderControllerInspector : Editor
 {
-	BorderController controller;
+	BorderController borderController;
 
 	public override void OnInspectorGUI ()
 	{
 		DrawDefaultInspector ();
-		controller = target as BorderController;
+		borderController = target as BorderController;
 		if (GUILayout.Button ( "Reset Line" ))
 		{
-			Undo.RecordObject ( controller, "Reset Line" );
-			controller.line.Reset ();
-			EditorUtility.SetDirty ( controller );
+			Undo.RecordObject ( borderController, "Reset Line" );
+			borderController.line.Reset ();
+			EditorUtility.SetDirty ( borderController );
 		}
 		if (GUILayout.Button ( "Update Line" ))
 		{
-			Undo.RecordObject ( controller, "Update Line" );
-			controller.UpdateLine ();
-			controller.GenerateBorder ();
-			EditorUtility.SetDirty ( controller );
+			Undo.RecordObject ( borderController, "Update Line" );
+			borderController.UpdateLine ();
+			borderController.GenerateBorder ();
+			EditorUtility.SetDirty ( borderController );
 		}
 	}
 
 	private void OnSceneGUI ()
 	{
-		if (controller.line != null)
+		if (borderController != null)
 		{
 			//ShowLine ();
 		}
@@ -36,10 +36,10 @@ public class BorderControllerInspector : Editor
 	private void ShowLine ()
 	{
 		Handles.color = Color.red;
-		for (int i = 0; i < controller.line.PointCount - 1; i++)
+		for (int i = 0; i < borderController.line.PointCount - 1; i++)
 		{
-			Vector3 p0 = controller.line.points[i];
-			Vector3 p1 = controller.line.points[i + 1];
+			Vector3 p0 = borderController.line.points[i];
+			Vector3 p1 = borderController.line.points[i + 1];
 			Handles.DrawLine ( p0, p1 );
 		}
 	}
