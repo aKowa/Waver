@@ -2,18 +2,18 @@
 
 public class Border
 {
-	private LineRenderer lineRenderer;
-	private EdgeCollider2D edge;
-
+	private LineRenderer _lineRenderer;
+	private EdgeCollider2D _edge;
+	
 	public LineRenderer LineRend
 	{
 		get
 		{
-			return lineRenderer;
+			return LineRenderer;
 		}
 		set
 		{
-			lineRenderer = value;
+			LineRenderer = value;
 		}
 	}
 
@@ -21,11 +21,37 @@ public class Border
 	{
 		get
 		{
-			return edge;
+			return Edge1;
 		}
 		set
 		{
-			edge = value;
+			Edge1 = value;
+		}
+	}
+
+	public LineRenderer LineRenderer
+	{
+		get
+		{
+			return _lineRenderer;
+		}
+
+		set
+		{
+			this._lineRenderer = value;
+		}
+	}
+
+	public EdgeCollider2D Edge1
+	{
+		get
+		{
+			return _edge;
+		}
+
+		set
+		{
+			this._edge = value;
 		}
 	}
 }
