@@ -1,0 +1,4 @@
+[submodule "Assets/MemoRandom"]
+	path = Assets/MemoRandom
+	url = C:\\Users\\Schnuffel\\OneDrive\\Tool Developement\\MemoRandom\\Assets\\MemoRandom\\Scripts
+	branch = master
