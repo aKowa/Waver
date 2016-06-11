@@ -63,6 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MemoRandom\ExtensionMethods.cs" />
+    <Compile Include="Assets\MemoRandom\Random List\RandomList.cs" />
+    <Compile Include="Assets\MemoRandom\Random List\RandomListElement.cs" />
+    <Compile Include="Assets\MemoRandom\Random List\RandomListExtensionMethods.cs" />
+    <Compile Include="Assets\MemoRandom\Random Shuffle\RandomShuffle.cs" />
     <Compile Include="Assets\Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\BezierControlPointMode.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
@@ -70,6 +75,7 @@
     <Compile Include="Assets\Scripts\BezierSpline.cs" />
     <Compile Include="Assets\Scripts\Border.cs" />
     <Compile Include="Assets\Scripts\BorderController.cs" />
+    <Compile Include="Assets\Scripts\BorderMusicController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Extension Methods\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\Line.cs" />

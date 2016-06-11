@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	{
 		Input.gyro.enabled = true;
 	}
-
+	
 	private void Update ()
 	{
 		this.MoveUp ();

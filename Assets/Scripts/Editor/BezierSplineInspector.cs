@@ -3,8 +3,7 @@ using UnityEngine;
 
 [CustomEditor ( typeof ( BezierSpline ) )]
 public class BezierSplineInspector : Editor
-{
-
+{ 
 	private const int lineSteps = 10;
 	private const float directionScale = 0.5f;
 	
