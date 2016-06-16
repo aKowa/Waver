@@ -3,6 +3,7 @@
 public class BorderMusicController : MonoBehaviour
 {
 	private AudioSource source;
+	private Vector3[] points;
 
 	public void Start ()
 	{
@@ -17,14 +18,15 @@ public class BorderMusicController : MonoBehaviour
 	{
 		var samples = new float[source.clip.samples];
 		source.clip.GetData(samples, 0);
-		var allZeros = true;
-		foreach (var s in samples)
-		{
-			if (s != 0)
-			{
-				allZeros = false;
-			}
-		}
-		Debug.Log( "All Zeros: " + allZeros );
+		Debug.Log("Sample Count: " + source.clip.samples);
+	}
+
+	public Vector3[] GetPoints()
+	{
+		points = new Vector3[4] {	new Vector3(0,0,0),
+									new Vector3(0,10,0),
+									new Vector3(0,20,0),
+									new Vector3(0,30,0) };
+		return points;
 	}
 }
