@@ -14,7 +14,10 @@ public class BorderMusicControllerInspector : Editor
 		borderMusicController = target as BorderMusicController;
 		if (GUILayout.Button("Set Border"))
 		{
-			
+			if (borderMusicController != null)
+			{
+				borderMusicController.SetPoints();
+			}
 		}
 	}
 
@@ -23,7 +26,11 @@ public class BorderMusicControllerInspector : Editor
 		if (borderMusicController != null)
 		{
 			Handles.color = Color.red;
-			Handles.DrawLines(borderMusicController.GetPoints());
+			var points = borderMusicController.GetPoints();
+			for (var i = 0; i < points.Length - 1; i++)
+			{
+				Handles.DrawLine(points[i], points[i+1]);
+			}
 		}
 	}
 }
