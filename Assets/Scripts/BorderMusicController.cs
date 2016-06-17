@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Linq;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class BorderMusicController : MonoBehaviour
 {
 	private AudioSource source;
-	private Vector3[] points;
+	public Vector2[] Points;
+	private const int Steps = 10000;
+	private const float XScalar = 3f;
+	private const float YScalar = 1.5f;
 
 	public void Start ()
 	{
 		SetPoints();
 	}
+
 
 	/// <summary>
 	/// Sets the borders by setting the line renderer and edge collider to the calculated points from the music.
@@ -17,19 +23,34 @@ public class BorderMusicController : MonoBehaviour
 	public void SetPoints()
 	{
 		var samples = new float[GetSource().clip.samples];
-		GetSource().clip.GetData(samples, 0);
-		Debug.Log("Sample Count: " + GetSource().clip.samples);
+		GetSource().clip.GetData ( samples, 0 );
+		Points = new Vector2[samples.Length / Steps];
+		Debug.Log( "Sample Length: " + samples.Length + " Points Length " + Points.Length);
+
+		for (var i = 0; i < Points.Length; i++)
+		{
+			Points[i] = (Vector2.right * samples[i * Steps] * XScalar) + (Vector2.up * i * YScalar);
+		}
 	}
 
-	public Vector3[] GetPoints()
+
+	/// <summary>
+	/// Returns the points for the border line.
+	/// </summary>
+	public Vector2[] GetPoints()
 	{
-		points = new Vector3[4] {	new Vector3(0,0,0),
-									new Vector3(0,10,0),
-									new Vector3(0,20,0),
-									new Vector3(0,30,0) };
-		return points;
+		return Points;
 	}
 
+
+	public void ResetPoints()
+	{
+		Points = new Vector2[2] { Vector2.zero, Vector2.up };
+	}
+
+	/// <summary>
+	/// Returns the AudioSource.
+	/// </summary>
 	public AudioSource GetSource()
 	{
 		if (source != null)
@@ -37,6 +58,6 @@ public class BorderMusicController : MonoBehaviour
 
 			return source;
 		}
-		return GetComponent<AudioSource> ();
+		return source = GetComponent<AudioSource> ();
 	}
 }

@@ -10,15 +10,21 @@ public class BorderMusicControllerInspector : Editor
 
 	public override void OnInspectorGUI()
 	{
-		DrawDefaultInspector();
 		borderMusicController = target as BorderMusicController;
-		if (GUILayout.Button("Set Border"))
+
+		if (borderMusicController == null) return;
+
+		if (GUILayout.Button("Set Points"))
 		{
-			if (borderMusicController != null)
-			{
-				borderMusicController.SetPoints();
-			}
+			borderMusicController.SetPoints();
 		}
+
+		if (GUILayout.Button("Reset Points"))
+		{
+			borderMusicController.ResetPoints();
+		}
+
+		DrawDefaultInspector ();
 	}
 
 	private void OnSceneGUI()
@@ -26,10 +32,10 @@ public class BorderMusicControllerInspector : Editor
 		if (borderMusicController != null)
 		{
 			Handles.color = Color.red;
-			var points = borderMusicController.GetPoints();
+			var points = borderMusicController.GetPoints ();
 			for (var i = 0; i < points.Length - 1; i++)
 			{
-				Handles.DrawLine(points[i], points[i+1]);
+				Handles.DrawLine ( points[i], points[i + 1] );
 			}
 		}
 	}
