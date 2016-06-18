@@ -71,24 +71,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MemoRandom\ExtensionMethods.cs" />
-    <Compile Include="Assets\MemoRandom\Random List\RandomList.cs" />
-    <Compile Include="Assets\MemoRandom\Random List\RandomListElement.cs" />
-    <Compile Include="Assets\MemoRandom\Random List\RandomListExtensionMethods.cs" />
-    <Compile Include="Assets\MemoRandom\Random Shuffle\RandomShuffle.cs" />
-    <Compile Include="Assets\Scripts\Bezier.cs" />
-    <Compile Include="Assets\Scripts\BezierControlPointMode.cs" />
-    <Compile Include="Assets\Scripts\BezierCurve.cs" />
-    <Compile Include="Assets\Scripts\BezierLine.cs" />
-    <Compile Include="Assets\Scripts\BezierSpline.cs" />
-    <Compile Include="Assets\Scripts\Border.cs" />
-    <Compile Include="Assets\Scripts\BorderController.cs" />
-    <Compile Include="Assets\Scripts\ClipSampler.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Extension Methods\ExtensionMethods.cs" />
-    <Compile Include="Assets\Scripts\Line.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Bezier\Bezier.cs" />
+    <Compile Include="Assets\Bezier\BezierControlPointMode.cs" />
+    <Compile Include="Assets\Bezier\BezierCurve.cs" />
+    <Compile Include="Assets\Bezier\BezierLine.cs" />
+    <Compile Include="Assets\Bezier\BezierSpline.cs" />
+    <Compile Include="Assets\Bezier\Line.cs" />
+    <Compile Include="Assets\Content\Scripts\BorderController.cs" />
+    <Compile Include="Assets\Content\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Content\Scripts\ClipSampler.cs" />
+    <Compile Include="Assets\Content\Scripts\Extension Methods\ExtensionMethods.cs" />
+    <Compile Include="Assets\Content\Scripts\Player.cs" />
+    <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Content\Scripts\ClipSampleController.cs" />
+    <Compile Include="Assets\Content\Scripts\RandomBorder.cs" />
+    <Compile Include="Assets\Content\Scripts\RandomBorderController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -117,10 +117,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Editor\BezierCurveInspector.cs" />
-    <Compile Include="Assets\Scripts\Editor\BezierLineInspector.cs" />
-    <Compile Include="Assets\Scripts\Editor\BezierSplineInspector.cs" />
-    <Compile Include="Assets\Scripts\Editor\BorderControllerInspector.cs" />
+    <Compile Include="Assets\Bezier\Editor\BezierCurveInspector.cs" />
+    <Compile Include="Assets\Bezier\Editor\BezierLineInspector.cs" />
+    <Compile Include="Assets\Bezier\Editor\BezierSplineInspector.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
