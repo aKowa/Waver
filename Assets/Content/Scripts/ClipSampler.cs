@@ -3,7 +3,6 @@
 public class ClipSampler
 {
 	private AudioClip clip;
-	private float[] samples;
 
 	public ClipSampler(AudioClip newClip)
 	{
@@ -11,6 +10,7 @@ public class ClipSampler
 		clip = newClip;
 	}
 
+	private float[] samples;
 	public float[] Samples
 	{
 		get
@@ -22,9 +22,9 @@ public class ClipSampler
 			samples = new float[clip.samples];
 			clip.GetData(samples, 0);
 			bool allZero = true;
-			for(int i = 0; i < samples.Length; i++)
+			foreach (float t in samples)
 			{
-				if (samples[i] != 0)
+				if (t != 0)
 				{
 					allZero = false;
 					break;

@@ -79,11 +79,11 @@
     <Compile Include="Assets\Bezier\Line.cs" />
     <Compile Include="Assets\Content\Scripts\BorderController.cs" />
     <Compile Include="Assets\Content\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Content\Scripts\ChunkController.cs" />
     <Compile Include="Assets\Content\Scripts\ClipSampler.cs" />
     <Compile Include="Assets\Content\Scripts\Extension Methods\ExtensionMethods.cs" />
     <Compile Include="Assets\Content\Scripts\Player.cs" />
     <Compile Include="Assets\Content\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Content\Scripts\ClipSampleController.cs" />
     <Compile Include="Assets\Content\Scripts\RandomBorder.cs" />
     <Compile Include="Assets\Content\Scripts\RandomBorderController.cs" />
   </ItemGroup>

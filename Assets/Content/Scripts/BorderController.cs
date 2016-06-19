@@ -5,7 +5,7 @@ using System.Collections;
 public class BorderController : MonoBehaviour
 {
 	private LineRenderer line;
-	public LineRenderer Line
+	private LineRenderer Line
 	{
 		get
 		{
@@ -30,23 +30,30 @@ public class BorderController : MonoBehaviour
 			return edge = GetComponent<EdgeCollider2D>();
 		}
 	}
-	
-	public void SetBorder(float[] samples, int size)
+
+	/// <summary>
+	/// Sets the LineRenderers vertex count to the given size.
+	/// </summary>
+	public void SetLinevertexCount( int size )
 	{
-		var points = GetPoints(samples, 0, size);
-		Edge.points = points;
-		Line.SetVertexCount(size);
-		Line.SetPositions(points.ToVector3());
+		Line.SetVertexCount ( size );
 	}
-	
-	private Vector2[] GetPoints ( float[] samples, int position, int size )
+
+	/// <summary>
+	/// Sets the games border (LineRenderer and EdgeCollider).
+	/// </summary>
+	/// <param name="sampleChunk">The chunk of samples to calculate the points from.</param>
+	/// <param name="position">The position in to calculate the points y position from.</param>
+	/// <param name="yScalar">Scales the y distance between points.</param>
+	public void SetBorder(float[] sampleChunk, int position, float yScalar )
 	{
-		var points = new Vector2[samples.Length];
+		var points = new Vector2[sampleChunk.Length];
 		for (var i = 0; i < points.Length; i++)
 		{
-			points[i].x = samples[i] + transform.localPosition.x;
-			points[i].y = (position + i) * 0.5f;
+			points[i].x = sampleChunk[i] + transform.localPosition.x;
+			points[i].y = (position + i) * yScalar;
 		}
-		return points;
+		Edge.points = points;
+		Line.SetPositions(points.ToVector3());
 	}
 }
